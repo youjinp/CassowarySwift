@@ -63,9 +63,8 @@ extension Symbol: Equatable {
 // MARK: Hashable
 extension Symbol: Hashable {
 
-    public var hashValue: Int {
-        // Return a hash 'unique' to this object
-        return ObjectIdentifier(self).hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
     }
 
 }

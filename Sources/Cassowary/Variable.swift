@@ -80,10 +80,7 @@ extension Variable: Equatable {
 
 // MARK: Hashable
 extension Variable: Hashable {
-
-    public var hashValue: Int {
-        // Return a hash 'unique' to this object
-        return ObjectIdentifier(self).hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
     }
-
 }
